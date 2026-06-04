@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+:root {
+  --primary: #6366f1;
+  --accent: #a855f7;
+  --neon-cyan: #22d3ee;
+  --neon-pink: #f472b6;
+}
+
+body {
+  font-family: 'Inter', system_ui, sans-serif;
+}
+
+/* Premium Dark Theme */
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+}
+
+.neon-glow {
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.3),
+              0 0 40px rgba(168, 85, 247, 0.2);
+}
+
+.card-hover {
+  transition: all 0.4s cubic-bezier(0.23, 1.0, 0.32, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.4),
+              0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.floating {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+.timeline-dot {
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.timeline-step:hover .timeline-dot {
+  transform: scale(1.2);
+  box-shadow: 0 0 0 8px rgba(99, 102, 241, 0.2);
+}
+
+/* Marquee */
+.marquee {
+  animation: marquee 40s linear infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Accordion */
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.accordion-content.open {
+  max-height: 200px;
+}
+
+/* Magnetic Button */
+.magnetic {
+  transition: transform 0.2s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* 3D Canvas Container */
+.canvas-container {
+  position: relative;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(99, 102, 241, 0.4);
+  border-radius: 3px;
+}
